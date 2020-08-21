@@ -1,35 +1,19 @@
-// only add update server if it's not being run from cli
-if (require.main !== module) {
-  require('update-electron-app')({
-    logger: require('electron-log')
-  })
-}
-
 const path = require('path')
-const glob = require('glob')
-const {app, BrowserWindow} = require('electron')
+const { app, BrowserWindow } = require('electron')
 
-const debug = /--debug/.test(process.argv[2])
-
-if (process.mas) app.setName('Electron APIs')
+if (process.mas) app.setName('It is Noisy')
 
 let mainWindow = null
 
 function initialize () {
   makeSingleInstance()
 
-  loadDemos()
-
   function createWindow () {
     const windowOptions = {
       width: 1080,
       minWidth: 680,
       height: 840,
-      title: app.getName()
-    }
-
-    if (process.platform === 'linux') {
-      windowOptions.icon = path.join(__dirname, '/assets/app-icon/png/512.png')
+      title: 'It is Noisy'
     }
 
     mainWindow = new BrowserWindow(windowOptions)

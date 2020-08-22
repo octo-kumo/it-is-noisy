@@ -24,6 +24,7 @@
     <input placeholder="Unit" class="form-control mb-2 mr-sm-2" id="unit" type="number"/>
     <button type="button" class="btn btn-primary form-control mb-2 mr-sm-2" id="set-location">Set My Location</button>
 </form>
+<small id="address"></small>
 <hr>
 <h5>Noise Level</h5>
 <div class="progress" style="height: 20px;">
@@ -85,6 +86,7 @@
         type="text/javascript"></script>
 <script>
     const heatMapData = [];
+    const address = document.getElementById('address');
     let rawData = [];
     let audioContext = null
     let meter = null
@@ -133,6 +135,7 @@
         let data = await fetch(url).then(res => res.json());
         localStorage.lat = data.latt;
         localStorage.lng = data.longt;
+        address.innerText = data.standard.addresst;
         localHeatmapNode.zip = localStorage.zip;
         localHeatmapNode.location = new google.maps.LatLng(parseFloat(localStorage.lat), parseFloat(localStorage.lng));
         heatMapData[0] = localHeatmapNode;

@@ -35,6 +35,9 @@ Web development skills
 1. A 4-infinity points 3D pin point system to find the noise maker without the noise maker needing to install the app
 2. A more secure data structure
 
+### Try it online
+https://octo-kumo.github.io/it-is-noisy/
+
 ### Demo Videos
 1. [Demo 1](https://youtu.be/CPCLDOhJSQA): General demo
 2. [Demo 2](https://youtu.be/nkK9SdxETrA): Changing location

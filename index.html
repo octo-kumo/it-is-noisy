@@ -159,6 +159,7 @@
 
     db.collection("houses").onSnapshot(function (querySnapshot) {
         heatMapData.splice(0, heatMapData.length);
+        rawData.splice(0, rawData.length);
         heatMapData.push(localHeatmapNode);
         querySnapshot.forEach(function (doc) {
             let data = doc.data();
